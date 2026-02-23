@@ -10,8 +10,8 @@ export default function Hero() {
 
             {/* Ambient color wash - brand blue, blurred and blended */}
             <div className="absolute top-0 left-0 right-0 h-[600px] pointer-events-none overflow-visible">
-                <div className="absolute -top-[300px] left-1/2 -translate-x-1/2 w-[100%] h-[600px] bg-[#111457] opacity-[0.08] rounded-full blur-[100px]" />
-                <div className="absolute -top-[200px] left-[30%] w-[400px] h-[400px] bg-[#1a1f6e] opacity-[0.06] rounded-full blur-[120px]" />
+                <div className="absolute -top-[300px] left-1/2 -translate-x-1/2 w-[100%] h-[600px] bg-[#111457] opacity-[0.18] rounded-full blur-[100px]" />
+                <div className="absolute -top-[200px] left-[30%] w-[400px] h-[400px] bg-[#1a1f6e] opacity-[0.12] rounded-full blur-[120px]" />
             </div>
 
             <div className="max-w-[1300px] mx-auto px-6 md:px-12 lg:px-16 relative z-10">

@@ -40,13 +40,13 @@ export default function Navbar({ forceSolid = false, isPublic = false }: { force
                     <Link href="/" className="flex items-center gap-2.5">
                         <div className={cn(
                             "w-9 h-9 rounded-lg flex items-center justify-center transition-colors duration-300",
-                            isSolid ? "bg-[#111457]" : "bg-white/10 border border-white/20"
+                            isSolid ? "bg-[#111457]" : "bg-[#111457]"
                         )}>
                             <span className="text-white font-bold text-[11px] tracking-wider">AG</span>
                         </div>
                         <span className={cn(
                             "text-[18px] font-bold tracking-tight transition-colors duration-300 uppercase",
-                            isSolid ? "text-[#111457]" : "text-white"
+                            isSolid ? "text-[#111457]" : "text-[#111457]"
                         )}>
                             AffiliGrid
                         </span>
@@ -62,7 +62,7 @@ export default function Navbar({ forceSolid = false, isPublic = false }: { force
                                     "text-sm font-medium transition-colors duration-300",
                                     isSolid
                                         ? "text-gray-500 hover:text-[#111457]"
-                                        : "text-white/60 hover:text-white"
+                                        : "text-[#111457]/60 hover:text-[#111457]"
                                 )}
                             >
                                 {link.name}
@@ -78,7 +78,7 @@ export default function Navbar({ forceSolid = false, isPublic = false }: { force
                                 "text-sm font-medium transition-colors duration-300",
                                 isSolid
                                     ? "text-gray-600 hover:text-[#111457]"
-                                    : "text-white/70 hover:text-white"
+                                    : "text-[#111457]/60 hover:text-[#111457]"
                             )}
                         >
                             Log in
@@ -95,7 +95,7 @@ export default function Navbar({ forceSolid = false, isPublic = false }: { force
                     <button
                         className={cn(
                             "md:hidden p-2 transition-colors",
-                            isSolid ? "text-gray-700" : "text-white"
+                            isSolid ? "text-gray-700" : "text-[#111457]"
                         )}
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                     >
