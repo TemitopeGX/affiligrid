@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Twitter, Instagram, Linkedin, Github, ArrowRight } from 'lucide-react';
 
 export default function Footer({ isPublic = false }: { isPublic?: boolean }) {
@@ -39,11 +40,14 @@ export default function Footer({ isPublic = false }: { isPublic?: boolean }) {
 
                     {/* Brand & Mission */}
                     <div className="lg:w-1/3 flex flex-col items-start">
-                        <div className="flex items-center gap-2 text-white mb-6">
-                            <div className="w-8 h-8 flex items-center justify-center bg-[#FF6600] rounded-lg">
-                                <span className="text-[12px] font-black tracking-tighter">AG</span>
-                            </div>
-                            <span className="text-[18px] font-bold tracking-tight">affiligrid</span>
+                        <div className="flex items-center mb-6">
+                            <Image
+                                src="/logo-white.png"
+                                alt="AffiliGrid Icon"
+                                width={48}
+                                height={48}
+                                className="object-contain"
+                            />
                         </div>
                         <p className="text-[#888888] text-[15px] leading-relaxed max-w-[300px] font-medium">
                             A highly-crafted, conversion-driven platform for global affiliate marketers.
