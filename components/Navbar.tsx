@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
@@ -37,19 +38,15 @@ export default function Navbar({ forceSolid = false, isPublic = false }: { force
             <div className="px-6 md:px-12 lg:px-16">
                 <div className="flex items-center justify-between">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center gap-2.5">
-                        <div className={cn(
-                            "w-9 h-9 rounded-lg flex items-center justify-center transition-colors duration-300",
-                            isSolid ? "bg-[#111457]" : "bg-[#111457]"
-                        )}>
-                            <span className="text-white font-bold text-[11px] tracking-wider">AG</span>
-                        </div>
-                        <span className={cn(
-                            "text-[18px] font-bold tracking-tight transition-colors duration-300 uppercase",
-                            isSolid ? "text-[#111457]" : "text-[#111457]"
-                        )}>
-                            AffiliGrid
-                        </span>
+                    <Link href="/" className="flex items-center">
+                        <Image
+                            src="/logo-blue.svg"
+                            alt="AffiliGrid Logo"
+                            width={160}
+                            height={35}
+                            className="object-contain"
+                            priority
+                        />
                     </Link>
 
                     {/* Desktop Links */}
