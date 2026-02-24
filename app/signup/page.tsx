@@ -92,34 +92,42 @@ export default function SignupPage() {
                 </div>
 
                 {/* Right Side: Form */}
-                <div className="flex-1 flex flex-col justify-center items-center px-6 lg:px-16 py-10 lg:py-0 overflow-y-auto">
-                    <div className="w-full max-w-[460px]">
+                <div className="flex-1 flex flex-col px-6 lg:px-16 py-6 lg:py-8">
 
-                        {/* Logo */}
-                        <div className="mb-8">
+                    {/* Navigation */}
+                    <nav className="w-full max-w-[460px] mx-auto flex items-center justify-between">
+                        <Link href="/">
                             <Image
                                 src="/logo-blue.svg"
                                 alt="AffiliGrid Logo"
-                                width={140}
-                                height={32}
+                                width={130}
+                                height={30}
                                 className="object-contain"
                                 priority
                             />
+                        </Link>
+                        <div className="flex items-center gap-4">
+                            <Link href="/" className="text-[13px] font-semibold text-[#111457]/60 hover:text-[#111457] transition-colors hidden sm:block">
+                                Home
+                            </Link>
+                            <Link href="/login" className="text-[13px] font-semibold text-white bg-[#111457] px-5 py-2.5 rounded-full hover:bg-[#1a1f6e] transition-colors">
+                                Sign in
+                            </Link>
                         </div>
+                    </nav>
 
-                        {/* Heading */}
-                        <h1 className="text-[32px] lg:text-[38px] font-bold text-[#111457] tracking-tight leading-tight mb-3">
+                    {/* Form centered */}
+                    <div className="w-full max-w-[460px] mx-auto flex flex-col justify-center flex-1">
+                        <h1 className="text-[28px] lg:text-[34px] font-bold text-[#111457] tracking-tight leading-tight mb-1">
                             Create an account
                         </h1>
-                        <p className="text-[#111457]/50 text-[15px] font-medium mb-8 leading-relaxed">
-                            Start your journey with us.<br />
-                            Create an account to unlock all features.
+                        <p className="text-[#111457]/50 text-[13px] font-medium mb-6 leading-relaxed">
+                            Start your journey with us. Unlock all features.
                         </p>
 
-                        {/* Form */}
-                        <form onSubmit={handleSubmit} className="space-y-5">
-                            <div className="space-y-2">
-                                <label className="block text-[14px] font-bold text-[#111457]">
+                        <form onSubmit={handleSubmit} className="space-y-4">
+                            <div className="space-y-1">
+                                <label className="block text-[13px] font-bold text-[#111457]">
                                     Username
                                 </label>
                                 <input
@@ -128,14 +136,14 @@ export default function SignupPage() {
                                     required
                                     value={formData.username}
                                     onChange={handleChange}
-                                    className="block w-full rounded-xl border border-gray-200 py-4 px-5 text-[#111457] bg-white placeholder:text-gray-400 focus:border-[#FF6600] focus:ring-1 focus:ring-[#FF6600] transition-all font-medium text-[15px] outline-none"
+                                    className="block w-full rounded-xl border border-gray-200 py-3 px-5 text-[#111457] bg-white placeholder:text-gray-400 focus:border-[#FF6600] focus:ring-1 focus:ring-[#FF6600] transition-all font-medium text-[14px] outline-none"
                                     placeholder="johndoe"
                                 />
-                                <p className="text-[12px] text-[#111457]/40 font-medium">This will be your profile URL: affiligrid.com/johndoe</p>
+                                <p className="text-[11px] text-[#111457]/40 font-medium">affiligrid.com/johndoe</p>
                             </div>
 
-                            <div className="space-y-2">
-                                <label className="block text-[14px] font-bold text-[#111457]">
+                            <div className="space-y-1">
+                                <label className="block text-[13px] font-bold text-[#111457]">
                                     Your email
                                 </label>
                                 <input
@@ -144,70 +152,52 @@ export default function SignupPage() {
                                     required
                                     value={formData.email}
                                     onChange={handleChange}
-                                    className="block w-full rounded-xl border border-gray-200 py-4 px-5 text-[#111457] bg-white placeholder:text-gray-400 focus:border-[#FF6600] focus:ring-1 focus:ring-[#FF6600] transition-all font-medium text-[15px] outline-none"
+                                    className="block w-full rounded-xl border border-gray-200 py-3 px-5 text-[#111457] bg-white placeholder:text-gray-400 focus:border-[#FF6600] focus:ring-1 focus:ring-[#FF6600] transition-all font-medium text-[14px] outline-none"
                                     placeholder="test@gmail.com"
                                 />
                             </div>
 
-                            <div className="space-y-2">
-                                <label className="block text-[14px] font-bold text-[#111457]">
-                                    Password
-                                </label>
-                                <input
-                                    type="password"
-                                    name="password"
-                                    required
-                                    value={formData.password}
-                                    onChange={handleChange}
-                                    className="block w-full rounded-xl border border-gray-200 py-4 px-5 text-[#111457] bg-white placeholder:text-gray-400 focus:border-[#FF6600] focus:ring-1 focus:ring-[#FF6600] transition-all font-medium text-[15px] outline-none"
-                                    placeholder="••••••••••••"
-                                />
+                            <div className="grid grid-cols-2 gap-4">
+                                <div className="space-y-1">
+                                    <label className="block text-[13px] font-bold text-[#111457]">
+                                        Password
+                                    </label>
+                                    <input
+                                        type="password"
+                                        name="password"
+                                        required
+                                        value={formData.password}
+                                        onChange={handleChange}
+                                        className="block w-full rounded-xl border border-gray-200 py-3 px-5 text-[#111457] bg-white placeholder:text-gray-400 focus:border-[#FF6600] focus:ring-1 focus:ring-[#FF6600] transition-all font-medium text-[14px] outline-none"
+                                        placeholder="••••••••"
+                                    />
+                                </div>
+                                <div className="space-y-1">
+                                    <label className="block text-[13px] font-bold text-[#111457]">
+                                        Confirm
+                                    </label>
+                                    <input
+                                        type="password"
+                                        name="confirmPassword"
+                                        required
+                                        value={formData.confirmPassword}
+                                        onChange={handleChange}
+                                        className="block w-full rounded-xl border border-gray-200 py-3 px-5 text-[#111457] bg-white placeholder:text-gray-400 focus:border-[#FF6600] focus:ring-1 focus:ring-[#FF6600] transition-all font-medium text-[14px] outline-none"
+                                        placeholder="••••••••"
+                                    />
+                                </div>
                             </div>
 
-                            <div className="space-y-2">
-                                <label className="block text-[14px] font-bold text-[#111457]">
-                                    Confirm password
-                                </label>
-                                <input
-                                    type="password"
-                                    name="confirmPassword"
-                                    required
-                                    value={formData.confirmPassword}
-                                    onChange={handleChange}
-                                    className="block w-full rounded-xl border border-gray-200 py-4 px-5 text-[#111457] bg-white placeholder:text-gray-400 focus:border-[#FF6600] focus:ring-1 focus:ring-[#FF6600] transition-all font-medium text-[15px] outline-none"
-                                    placeholder="••••••••••••"
-                                />
-                            </div>
-
-                            {/* CTA Button */}
                             <button
                                 type="submit"
                                 disabled={isLoading}
-                                className="w-full rounded-full bg-[#FF6600] py-4 text-[16px] font-bold text-white hover:bg-[#e65c00] hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all disabled:opacity-70"
+                                className="w-full rounded-full bg-[#FF6600] py-3.5 text-[15px] font-bold text-white hover:bg-[#e65c00] hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all disabled:opacity-70"
                             >
                                 {isLoading ? 'Creating account...' : 'Create account'}
                             </button>
                         </form>
 
-                        {/* Social Login */}
-                        <div className="flex gap-4 mt-6">
-                            <button className="flex-1 flex items-center justify-center gap-2 rounded-xl border border-gray-200 py-3.5 hover:bg-gray-50 hover:border-gray-300 transition-all">
-                                <svg className="w-5 h-5" viewBox="0 0 24 24">
-                                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
-                                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
-                                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05" />
-                                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
-                                </svg>
-                            </button>
-                            <button className="flex-1 flex items-center justify-center gap-2 rounded-xl border border-gray-200 py-3.5 hover:bg-gray-50 hover:border-gray-300 transition-all">
-                                <svg className="w-5 h-5" fill="#111457" viewBox="0 0 24 24">
-                                    <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-                                </svg>
-                            </button>
-                        </div>
-
-                        {/* Bottom link */}
-                        <p className="text-center text-[14px] text-[#111457]/50 font-medium mt-6 pb-4">
+                        <p className="text-center text-[13px] text-[#111457]/50 font-medium mt-5">
                             you already have an account?{' '}
                             <Link href="/login" className="text-[#FF6600] font-semibold hover:underline underline-offset-4">
                                 sign in

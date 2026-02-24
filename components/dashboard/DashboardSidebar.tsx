@@ -2,6 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
     LayoutDashboard,
     Link2,
@@ -59,9 +60,14 @@ export default function DashboardSidebar() {
                 isCollapsed ? "justify-center" : "justify-between px-5"
             )}>
                 {!isCollapsed && (
-                    <Link href="/dashboard" className="flex items-center gap-1.5">
-                        <span className="text-lg font-bold text-[#111457] tracking-tight">AFFILIGRID</span>
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#FF6600]"></span>
+                    <Link href="/dashboard" className="flex items-center">
+                        <Image
+                            src="/logo-blue.svg"
+                            alt="AffiliGrid"
+                            width={120}
+                            height={28}
+                            className="object-contain"
+                        />
                     </Link>
                 )}
                 <button
